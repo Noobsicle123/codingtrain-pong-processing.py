@@ -22,8 +22,7 @@ class Puck(object):
         if self.y - self.r < p.y + p.h / 2 and self.y + self.r > p.y - p.h / 2 and self.x + self.r > p.x - p.w / 2:
             if self.x < p.x:
                 self.diff = self.y - (p.y - p.h / 2)
-                self.rad = radians(135)
-                self.angle = map(self.diff, 0, p.h, -self.rad, self.rad)
+                self.angle = map(self.diff, 0, p.h, radians(225), radians(135))
                 self.xspeed = 5 * cos(self.angle)
                 self.yspeed = 5 * sin(self.angle)
                 self.x = p.x - p.w / 2 - self.r
